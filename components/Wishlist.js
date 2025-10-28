@@ -1,4 +1,4 @@
-function Wishlist({ products, onRemove, translations }) {
+function Wishlist({ products, onRemove, onAddToCart, onOpenCart, translations }) {
   try {
     const [isOpen, setIsOpen] = React.useState(false);
 
@@ -38,19 +38,40 @@ function Wishlist({ products, onRemove, translations }) {
               ) : (
                 <div className="space-y-4">
                   {products.map(product => (
-                    <div key={product.id} className="flex gap-4 group">
-                      <img src={product.image} alt={product.name} className="w-24 h-32 object-cover" />
-                      <div className="flex-1">
-                        <h4 className="font-medium mb-1">{product.name}</h4>
-                        <p className="text-sm text-gray-500 mb-2">{product.category}</p>
-                        <p className="font-light">{product.price.toLocaleString()} ₽</p>
+                    <div key={product.id} className="border-b border-gray-100 pb-4 mb-4 last:border-0">
+                      <div className="flex gap-4 mb-3">
+                        <img src={product.image} alt={product.name} className="w-20 h-28 object-cover rounded" />
+                        <div className="flex-1">
+                          <h4 className="font-medium mb-1 text-sm">{product.name}</h4>
+                          <p className="text-xs text-gray-500 mb-2">{product.category}</p>
+                          <p className="font-light text-base">{product.price.toLocaleString()} ₽</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-2">
                         <button
-                          onClick={() => onRemove(product.id)}
-                          className="text-xs text-red-500 mt-2 hover:underline"
+                          onClick={() => {
+                            onAddToCart({ ...product, size: 'M', quantity: 1 });
+                          }}
+                          className="flex-1 bg-black text-white py-2 text-xs tracking-wider hover:bg-gray-800 transition-colors active:scale-95"
                         >
-                          {translations.remove}
+                          {translations.addToCart || 'В корзину'}
+                        </button>
+                        <button
+                          onClick={() => {
+                            onAddToCart({ ...product, size: 'M', quantity: 1 });
+                            onOpenCart();
+                          }}
+                          className="flex-1 border-2 border-black text-black py-2 text-xs tracking-wider hover:bg-black hover:text-white transition-all active:scale-95"
+                        >
+                          {translations.goToCart || 'Оформить'}
                         </button>
                       </div>
+                      <button
+                        onClick={() => onRemove(product.id)}
+                        className="text-xs text-red-500 mt-2 hover:underline w-full text-center"
+                      >
+                        {translations.remove}
+                      </button>
                     </div>
                   ))}
                 </div>

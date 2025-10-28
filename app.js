@@ -239,6 +239,8 @@ function App() {
         <Wishlist 
           products={PRODUCTS.filter(p => wishlist.includes(p.id))}
           onRemove={toggleWishlist}
+          onAddToCart={addToCart}
+          onOpenCart={() => setCartOpen(true)}
           translations={t.wishlist}
         />
         

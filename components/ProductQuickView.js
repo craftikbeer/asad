@@ -33,7 +33,11 @@ function ProductQuickView({ product, onClose, onAddToCart, isWishlisted, onToggl
                   <p className="text-xs tracking-[0.3em] uppercase text-gray-500 mb-1">{product.category}</p>
                   <h2 className="text-2xl lg:text-3xl font-light tracking-tight mb-2">{product.name}</h2>
                   <p className="text-xl font-light mb-3">{product.price.toLocaleString()} ₽</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{product.description}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-3">{product.description}</p>
+                  <div className="flex items-center gap-3 pt-2">
+                    <span className="text-xs text-gray-500 uppercase tracking-wider">Поделиться:</span>
+                    <SocialShare product={product} />
+                  </div>
                 </div>
 
                 <div className="border-t border-gray-200 pt-4">

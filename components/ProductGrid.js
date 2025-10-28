@@ -47,19 +47,24 @@ function ProductGrid({ products, onQuickView, onContactClick, wishlist, onToggle
                   <div className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${
                     hoveredId === product.id ? 'opacity-100' : 'opacity-0'
                   } md:group-hover:opacity-100`}>
-                    <div className="absolute inset-0 flex items-center justify-center gap-2 sm:gap-3">
-                      <button 
-                        onClick={() => onQuickView(product)}
-                        className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform active:scale-95"
-                      >
-                        <div className="icon-eye text-lg sm:text-xl text-black"></div>
-                      </button>
-                      <button 
-                        onClick={() => onToggleWishlist(product.id)}
-                        className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform active:scale-95"
-                      >
-                        <div className={`icon-heart text-lg sm:text-xl ${wishlist.includes(product.id) ? 'text-red-500' : 'text-black'}`}></div>
-                      </button>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <button 
+                          onClick={() => onQuickView(product)}
+                          className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform active:scale-95"
+                        >
+                          <div className="icon-eye text-lg sm:text-xl text-black"></div>
+                        </button>
+                        <button 
+                          onClick={() => onToggleWishlist(product.id)}
+                          className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform active:scale-95"
+                        >
+                          <div className={`icon-heart text-lg sm:text-xl ${wishlist.includes(product.id) ? 'text-red-500' : 'text-black'}`}></div>
+                        </button>
+                      </div>
+                      <div className="hidden sm:block">
+                        <SocialShare product={product} />
+                      </div>
                     </div>
                   </div>
                   

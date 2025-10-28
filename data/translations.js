@@ -118,7 +118,9 @@ const TRANSLATIONS = {
     wishlist: {
       title: "Wishlist",
       empty: "Your wishlist is empty",
-      remove: "Remove"
+      remove: "Remove",
+      addToCart: "Add to Cart",
+      goToCart: "Checkout"
     },
     cart: {
       title: "Cart",
@@ -288,7 +290,9 @@ const TRANSLATIONS = {
     wishlist: {
       title: "Избранное",
       empty: "Ваш список избранного пуст",
-      remove: "Удалить"
+      remove: "Удалить",
+      addToCart: "В корзину",
+      goToCart: "Оформить"
     },
     cart: {
       title: "Корзина",
