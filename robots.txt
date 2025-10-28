@@ -1,0 +1,46 @@
+# ANDERS Fashion - Robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /maintenance.html
+Disallow: /404.html
+Disallow: /*.json$
+Disallow: /data/
+Disallow: /components/
+
+# Explicitly allow important pages
+Allow: /index.html
+Allow: /about.html
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /shipping.html
+Allow: /faq.html
+
+# Allow CSS and JS for proper indexing
+Allow: /*.css
+Allow: /*.js
+
+# Googlebot specific
+User-agent: Googlebot
+Allow: /
+Disallow: /admin.html
+Disallow: /maintenance.html
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /admin.html
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Disallow: /admin.html
+
+# Sitemap location
+Sitemap: https://andersdenim.ru/sitemap.xml
+
+# Host (preferred domain)
+Host: https://andersdenim.ru
+
+# Crawl-delay
+Crawl-delay: 1

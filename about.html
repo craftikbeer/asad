@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title id="page-title">О бренде ANDERS - История премиального модного дома с 2019 года</title>
+    <meta name="description" id="page-description" content="История модного дома ANDERS. Узнайте о философии бренда, команде дизайнеров и ценностях. Премиальный деним и белье из Италии и Франции. Основан в 2019 году.">
+    <meta name="keywords" content="ANDERS fashion, luxury brand story, fashion philosophy, premium clothing brand, история бренда, модный дом">
+    
+    <link rel="canonical" href="https://andersdenim.ru/about.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andersdenim.ru/about.html">
+    <meta property="og:title" id="og-title" content="О бренде ANDERS - История премиального модного дома">
+    <meta property="og:description" id="og-description" content="История модного дома ANDERS. Философия бренда, команда дизайнеров, премиальный деним из Италии">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&h=630&q=80&fit=crop">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="twitter-title" content="О бренде ANDERS - История модного дома">
+    <meta name="twitter:description" id="twitter-description" content="История модного дома ANDERS. Философия бренда и команда">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&h=630&q=80&fit=crop">
+    
+    <link rel="alternate" hreflang="en" href="https://andersdenim.ru/about.html?lang=en">
+    <link rel="alternate" hreflang="ru" href="https://andersdenim.ru/about.html?lang=ru">
+    <link rel="alternate" hreflang="x-default" href="https://andersdenim.ru/about.html">
+
+    <!-- Schema.org About Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "ANDERS",
+        "foundingDate": "2019",
+        "founder": [
+          {
+            "@type": "Person",
+            "name": "Alexander Petrov",
+            "jobTitle": "Creative Director"
+          },
+          {
+            "@type": "Person",
+            "name": "Sofia Ivanova",
+            "jobTitle": "Head Designer"
+          }
+        ],
+        "description": "Luxury fashion house founded on principles of freedom, honesty and artistic expression",
+        "url": "https://andersdenim.ru",
+        "logo": "https://andersdenim.ru/logo.png",
+        "sameAs": [
+          "https://www.instagram.com/anders_fashion",
+          "https://t.me/andersdenim"
+        ]
+      }
+    }
+    </script>
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #ffffff;
+            --accent-color: #ff0000;
+            --text-primary: #000000;
+            --text-secondary: #666666;
+            --border-color: #e5e5e5;
+        }
+    }
+
+    @layer base {
+        body {
+            @apply bg-white text-[var(--text-primary)] antialiased overflow-x-hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            @apply font-light tracking-tight;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    }
+
+    @layer utilities {
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+    }
+    
+    .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    
+    .preloader-door {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background: #000;
+        transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    
+    .preloader-door-left {
+        left: 0;
+        transform: translateX(0);
+    }
+    
+    .preloader-door-right {
+        right: 0;
+        transform: translateX(0);
+    }
+    
+    .preloader.loaded .preloader-door-left {
+        transform: translateX(-100%);
+    }
+    
+    .preloader.loaded .preloader-door-right {
+        transform: translateX(100%);
+    }
+    
+    .preloader-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 1;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+    
+    .preloader.loaded .preloader-content {
+        opacity: 0;
+    }
+    
+    .preloader-logo {
+        font-size: 4rem;
+        font-weight: 300;
+        letter-spacing: 0.5rem;
+        color: #fff;
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: 2rem;
+    }
+    
+    .preloader-line {
+        width: 200px;
+        height: 2px;
+        background: #fff;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .preloader-line::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, #ff0000, transparent);
+        animation: lineMove 2s infinite;
+    }
+    
+    @keyframes lineMove {
+        0% { left: -100%; }
+        100% { left: 100%; }
+    }
+    
+    @media (max-width: 768px) {
+        .preloader-logo {
+            font-size: 2.5rem;
+            letter-spacing: 0.3rem;
+        }
+        .preloader-line {
+            width: 150px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="preloader" class="preloader">
+        <div class="preloader-door preloader-door-left"></div>
+        <div class="preloader-door preloader-door-right"></div>
+        <div class="preloader-content">
+            <h1 class="preloader-logo">ANDERS</h1>
+            <div class="preloader-line"></div>
+        </div>
+    </div>
+    <div id="root"></div>
+    <script>
+      const hasVisited = sessionStorage.getItem('has_visited');
+      const preloader = document.getElementById('preloader');
+      
+      if (hasVisited) {
+        preloader.style.display = 'none';
+      } else {
+        sessionStorage.setItem('has_visited', 'true');
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            preloader.classList.add('loaded');
+            setTimeout(() => {
+              preloader.style.display = 'none';
+            }, 1500);
+          }, 1000);
+        });
+      }
+      
+      window.addEventListener('DOMContentLoaded', () => {
+        const hash = window.location.hash;
+        if (hash) {
+          setTimeout(() => {
+            const element = document.querySelector(hash);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100);
+        }
+      });
+    </script>
+    <script type="text/babel" src="data/translations.js"></script>
+    <script type="text/babel" src="components/Breadcrumbs.js"></script>
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/AboutHero.js"></script>
+    <script type="text/babel" src="components/AboutPhilosophy.js"></script>
+    <script type="text/babel" src="components/AboutTeam.js"></script>
+    <script type="text/babel" src="components/ContactModal.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <script type="text/babel" src="components/AIChatBot.js"></script>
+    <script type="text/babel" src="about-app.js"></script>
+</body>
+</html>
